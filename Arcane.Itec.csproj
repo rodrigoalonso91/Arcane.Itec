@@ -4,6 +4,9 @@
 		<TargetFramework>net472</TargetFramework>
 		<Authors>Arcane</Authors>
 		<Description>Componentes para el area de distribución de Claro.</Description>
+		<Copyright>Copyright (c) Arcane 2022</Copyright>
+		<RepositoryUrl>https://github.com/rodrigoalonso91/Arcane.Itec</RepositoryUrl>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 </Project>
