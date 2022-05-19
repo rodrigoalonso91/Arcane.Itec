@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net472</TargetFramework>
+		<Authors>Arcane</Authors>
+		<Description>Componentes para el area de distribución de Claro.</Description>
+	</PropertyGroup>
+
+</Project>
