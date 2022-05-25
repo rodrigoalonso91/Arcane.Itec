@@ -27,7 +27,7 @@ namespace Arcane.Itec.ItecUtils
 
         public static double GetEfectivity(int totalClients, int clientsOk)
         {
-            return clientsOk / totalClients * 100;
+            return (double)clientsOk / (double)totalClients * 100;
         }
     }
 }

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcane.Itec", "Arcane.Itec.csproj", "{62BBB947-2ABD-4FBA-8B7A-D6DAE5E64F4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcane.Itec", "src\Arcane.Itec.csproj", "{1A7E2354-8122-44EE-9B71-49E26E25D968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcane.Itec.UT", "Arcane.Itec.UT\Arcane.Itec.UT.csproj", "{2571F25B-9633-49A0-982B-0215573F7636}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{62BBB947-2ABD-4FBA-8B7A-D6DAE5E64F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62BBB947-2ABD-4FBA-8B7A-D6DAE5E64F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62BBB947-2ABD-4FBA-8B7A-D6DAE5E64F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62BBB947-2ABD-4FBA-8B7A-D6DAE5E64F4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A7E2354-8122-44EE-9B71-49E26E25D968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A7E2354-8122-44EE-9B71-49E26E25D968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A7E2354-8122-44EE-9B71-49E26E25D968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A7E2354-8122-44EE-9B71-49E26E25D968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2571F25B-9633-49A0-982B-0215573F7636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2571F25B-9633-49A0-982B-0215573F7636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2571F25B-9633-49A0-982B-0215573F7636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2571F25B-9633-49A0-982B-0215573F7636}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
