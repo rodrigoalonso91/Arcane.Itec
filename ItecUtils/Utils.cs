@@ -25,10 +25,9 @@ namespace Arcane.Itec.ItecUtils
             return arrSplitedItems[index];
         }
 
-        public static string GetEfectivity(int totalClients, int clientsOk)
+        public static double GetEfectivity(int totalClients, int clientsOk)
         {
-            var result = (clientsOk * 100) / totalClients;
-            return result.ToString() + '%';
+            return clientsOk / totalClients * 100;
         }
     }
 }
