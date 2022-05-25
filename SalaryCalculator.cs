@@ -51,7 +51,7 @@ namespace Arcane.Itec
                 e.SimPercentage = Utils.GetEfectivity(e.PsrAmount, e.SimAmount);
                 e.SelloutPercentage = Utils.GetEfectivity(e.PsrAmount, e.SelloutAmount);
                 e.VolumeReward = CalculateVolumenReward(e, TotalVolumes);
-                e.TotalSalary = CalculateTotalRewards(e);
+                e.TotalSalary = GetTotalSalary(e);
             });
 
             return employees;
@@ -104,23 +104,18 @@ namespace Arcane.Itec
             return employee.SelloutAmount * commision;
         }
 
-        private string CalculateVolumenReward(Employee employee, int volume)
+        private int CalculateVolumenReward(Employee employee, int volume)
         {
-            if (employee.SimAmount < Rules.RequieredPSR || employee.SelloutAmount < Rules.RequieredPSR) return "$ 0";
+            if (employee.SimAmount < Rules.RequieredPSR || employee.SelloutAmount < Rules.RequieredPSR) return 0;
 
             long multiplyResult = (long)employee.VolumeAmount * Commission.VolumePayment;
-            var reward = (int)Math.Round((double)multiplyResult / volume);
-            return "$ " + reward;
+
+            return (int)Math.Round((double)multiplyResult / volume);
         }
 
-        private string CalculateTotalRewards(Employee employee)
+        private int GetTotalSalary(Employee employee)
         {
-            var simReward = int.Parse(Utils.ExtractNumber(employee.SimReward));
-            var selloutReward = int.Parse(Utils.ExtractNumber(employee.SelloutReward));
-            var volumeReward = int.Parse(Utils.ExtractNumber(employee.VolumeReward));
-
-            var totalReward = simReward + selloutReward + volumeReward;
-            return "$ " + totalReward;
+            return employee.SimReward + employee.SelloutReward + employee.VolumeReward;
         }
     }
 }
