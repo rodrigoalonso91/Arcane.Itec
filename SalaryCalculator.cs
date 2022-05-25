@@ -46,11 +46,11 @@ namespace Arcane.Itec
 
             employees.ForEach(e =>
             {
-                e.SimReward = CalculateSimReward(e);
-                e.SelloutReward = CalculateSOReward(e);
+                e.SimReward = GetSimReward(e);
+                e.SelloutReward = GetSelloutReward(e);
                 e.SimPercentage = Utils.GetEfectivity(e.PsrAmount, e.SimAmount);
                 e.SelloutPercentage = Utils.GetEfectivity(e.PsrAmount, e.SelloutAmount);
-                e.VolumeReward = CalculateVolumenReward(e, TotalVolumes);
+                e.VolumeReward = GetVolumeReward(e, TotalVolumes);
                 e.TotalSalary = GetTotalSalary(e);
             });
 
@@ -68,7 +68,7 @@ namespace Arcane.Itec
             });
         }
 
-        private int CalculateSimReward(Employee employee)
+        private int GetSimReward(Employee employee)
         {
             var commision = Commission.DefaultSim;
 
@@ -88,7 +88,7 @@ namespace Arcane.Itec
             return employee.SimAmount * commision;
         }
 
-        private int CalculateSOReward(Employee employee)
+        private int GetSelloutReward(Employee employee)
         {
             int commision = Commission.DefaultSellout;
 
@@ -104,7 +104,7 @@ namespace Arcane.Itec
             return employee.SelloutAmount * commision;
         }
 
-        private int CalculateVolumenReward(Employee employee, int volume)
+        private int GetVolumeReward(Employee employee, int volume)
         {
             if (employee.SimAmount < Rules.RequieredPSR || employee.SelloutAmount < Rules.RequieredPSR) return 0;
 
