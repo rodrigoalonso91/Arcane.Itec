@@ -72,21 +72,36 @@ namespace Arcane.Itec
         {
             var commision = Commission.DefaultSim;
 
-            if (employee.SimAmount >= Rules.SimStep3) commision = Commission.SimStep3;
-            else if (employee.SimAmount >= Rules.SimStep2) commision = Commission.SimStep2;
-            else if (employee.SimAmount >= Rules.SimStep1) commision = Commission.SimStep1;
+            if (employee.SimAmount >= Rules.SimStep3)
+            {
+                commision = Commission.SimStep3;
+            }
+            else if (employee.SimAmount >= Rules.SimStep2)
+            {
+                commision = Commission.SimStep2;
+            }
+            else if (employee.SimAmount >= Rules.SimStep1)
+            {
+                commision = Commission.SimStep1;
+            }
 
             return employee.SimAmount * commision;
         }
 
-        private string CalculateSOReward(Employee employee)
+        private int CalculateSOReward(Employee employee)
         {
             int commision = Commission.DefaultSellout;
-            if (employee.SelloutAmount >= Rules.SelloutStep2) commision = Commission.SelloutStep2;
-            else if (employee.SelloutAmount >= Rules.SelloutStep1) commision = Commission.SelloutStep1;
 
-            var reward = employee.SelloutAmount * commision;
-            return "$ " + reward;
+            if (employee.SelloutAmount >= Rules.SelloutStep2)
+            {
+                commision = Commission.SelloutStep2;
+            }
+            else if (employee.SelloutAmount >= Rules.SelloutStep1)
+            {
+                commision = Commission.SelloutStep1;
+            }
+
+            return employee.SelloutAmount * commision;
         }
 
         private string CalculateVolumenReward(Employee employee, int volume)
